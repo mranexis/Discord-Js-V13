@@ -29,4 +29,4 @@ Bot.on('messageCreate', message => {
 })
 
 
-Bot.login("ODg3NjMyNzg2OTk4MDM0NDkz.YUG-cw.pFzjFQdcRSxZMR65hL-D5ZCeoig")
+Bot.login("توكن")
