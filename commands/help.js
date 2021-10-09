@@ -5,19 +5,19 @@ module.exports = {
     execute(message, MessageEmbed){
         const helpEmbed = new MessageEmbed()
         .setTitle('امبد المساعدة')
-        //.setURL('https://www.google.com')
-        .setAuthor(message.author.username, message.author.avatarURL(), 'https://www.instagram.com/its.anis05')
+        //.setURL('https://www.google.com') اذا كنت تريد رابط احذف الكلام هذا و ال '//'
+        .setAuthor(message.author.username, message.author.avatarURL(), 'رابط موقع ويب')
         .setDescription('مرحبا بك يا مستعمل البوت هنا وصف للبوت بشكل مختصر و هاذا الامر عبارة عن امر للمساعدة و خريطة الاوامر')
         .addFields({
-            name: "embed simple", value: "hihieheihe", inline: true
+            name: "اسم الخانة", value: "قيمة الخانة", inline: true
         },
         {
-            name: "blabla", value: "beblelel", inline:true
+            name: "اسم الخانة", value: "قيمة الخانة", inline:true 
         }
         )
         .addField('عنوان', 'المحتوى', true)
         .setThumbnail(message.author.avatarURL())
-        //.setImage('')
+        //.setImage('') اذا كنت تريد صورة احذف الكلام هذا و ال '//'
         .setFooter(message.author.username, message.author.avatarURL())
         .setTimestamp()
         .setColor('BLACK')
