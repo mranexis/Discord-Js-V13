@@ -1,9 +1,10 @@
-const { Client, Collection } = require('discord.js');
+const { Client, Collection, MessageEmbed } = require('discord.js');
 const Bot = new Client({
     intents: ["GUILD_MESSAGES", "GUILDS"],   
 });
 const prefix = '?';
 const fs = require('fs');
+const { brotliCompressSync } = require('zlib');
 
 Bot.once('ready', () => {
     console.log('Bot is online')
@@ -24,6 +25,9 @@ Bot.on('messageCreate', message => {
         const command = args.shift().toLowerCase()
     if(command === 'ping') {
         Bot.commands.get('ping').execute(message, args);
+    }
+    else if(command === 'help'){
+        Bot.commands.get('help').execute(message, MessageEmbed)
     }
 
 })
