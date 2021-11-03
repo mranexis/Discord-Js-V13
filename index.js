@@ -19,12 +19,17 @@ Files.forEach(file => {
 })
 
 Bot.on('messageCreate', message => {
+
     if(!message.content.startsWith(prefix) && message.author.bot) return;
-        const args = message.content.slice(prefix.length).split(/ +/);
+    const user = message.mentions.users.first();
+    const args = message.content.slice(prefix.length).split(/ +/);
         const command = args.shift().toLowerCase()
-    if(command === 'ping') {
-        Bot.commands.get('ping').execute(message, args);
-    }
+    Files.forEach(file => {
+        if(command + '.js' === file){
+            Bot.commands.get(`${command}`).execute(message, MessageEmbed, args, user)
+        } 
+        
+    })
 
 })
 
